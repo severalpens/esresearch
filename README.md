@@ -13,19 +13,19 @@
 
 ## Getting Started (General)
 - [Run Elasticsearch locally](https://www.elastic.co/guide/en/elasticsearch/reference/current/run-elasticsearch-locally.html)
-- Create a file called '.env' and store your password in it (ELASTIC_PASSWORD=xxxxxxxxxxx)
-- Install and activate a virtual environment
-    - `python -m venv venv`
-    - `source venv/bin/activate`
-- Install the required packages
-    - `pip install jupyter`
-    - `pip install ipykernel`
-    - `python -m ipykernel install --user --name=your_env_name`
-    - `pip install elasticsearch`
-
 
 
 
 ## jupyterproject
+- Open /jupyterproject in VS Code
+- Create a file called '.env' and store your password in it (ELASTIC_PASSWORD=xxxxxxxxxxx)
+- (optional) Install and activate a virtual environment
+    - `python -m venv venv`
+    - `source venv/bin/activate`
+- (optional) Install the required packages
+    - `pip install jupyter`
+    - `pip install ipykernel`
+    - `python -m ipykernel install --user --name=your_env_name`
+    - `pip install elasticsearch`
 - Run /jupyterproject/scrape.ipynb to extract sample FAQs
 - Run /jupyterproject/Elasticsearch1.ipynb to index the FAQs
