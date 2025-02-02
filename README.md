@@ -15,8 +15,9 @@
 - [Run Elasticsearch locally](https://www.elastic.co/guide/en/elasticsearch/reference/current/run-elasticsearch-locally.html)
 
 
+## Projects
 
-## jupyterproject
+### jupyterproject
 - Open /jupyterproject in VS Code
 - Create a file called '.env' and store your password in it (ELASTIC_PASSWORD=xxxxxxxxxxx)
 - (optional) Install and activate a virtual environment
