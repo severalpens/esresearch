@@ -1,0 +1,5 @@
+Chapter 1:
+
+http://media.sundog-soft.com/es8/shakes-mapping.json
+
+http://media.sundog-soft.com/es8/shakespeare_8.0.json
