@@ -1,5 +1,17 @@
 # Elasticsearch Research
 
+## Objectives
+- Tabular data
+- embedding
+- search optimisation
+- FAQ
+- index architecture
+- vector embedding
+- best practice for embedding 	
+    - (dense & sparse)
+    - standard (no embedding)		
+- neuralseek - possible option
+
 [Udemy Course](https://ibm-learning.udemy.com/course/elasticsearch-7-and-elastic-stack/learn/lecture/24785894)
 
 ## Prerequisites
