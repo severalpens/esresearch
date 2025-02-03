@@ -1,0 +1,66 @@
+{
+    "course": "Elasticsearch 8 and the Elastic Stack: In Depth and Hands On",
+    "sections": [
+        {
+            "section": "Installing and Understanding Elasticsearch",
+            "videos": [
+                {
+                    "video": "Udemy 101: Getting the Most From This Course",
+                    "scripts":[]
+                },
+                {
+                    "video": "Section 1 Intro",
+                    "scripts":[]
+                },
+                {
+                    "video": "Installing Elasticsearch",
+                    "scripts":[]
+                },
+                {
+                    "video": "Elasticsearch Overview",
+                    "scripts":[]
+                },
+                {
+                    "video": "Intro to HTTP and RESTful API's",
+                    "scripts":[]
+                },
+                {
+                    "video": "Elasticsearch Basics: Logical Concepts",
+                    "scripts":[]
+                },
+                {
+                    "video": "Term Frequency / Inverse Document Frequency (TF/IDF)",
+                    "scripts":[]
+                },
+                {
+                    "video": "Using Elasticsearch",
+                    "scripts":[]
+                },
+                {
+                    "video": "What's New in Elasticsearch 8",
+                    "scripts":[]
+                },
+                {
+                    "video": "How Elasticsearch Scales",
+                    "scripts":[]
+                },
+                {
+                    "video": "",
+                    "scripts":[]
+                }
+            ]
+        },
+        {"section":"title", "videos":[{"video":"","scripts":[]}]},
+        {"section":"title", "videos":[{"video":"","scripts":[]}]},
+        {"section":"title", "videos":[{"video":"","scripts":[]}]},
+        {"section":"title", "videos":[{"video":"","scripts":[]}]},
+        {"section":"title", "videos":[{"video":"","scripts":[]}]},
+        {"section":"title", "videos":[{"video":"","scripts":[]}]},
+        {"section":"title", "videos":[{"video":"","scripts":[]}]},
+        {"section":"title", "videos":[{"video":"","scripts":[]}]},
+        {"section":"title", "videos":[{"video":"","scripts":[]}]},
+        {"section":"title", "videos":[{"video":"","scripts":[]}]},
+        {"section":"title", "videos":[{"video":"","scripts":[]}]},
+        {"section":"title", "videos":[{"video":"","scripts":[]}]},
+    ]
+}
