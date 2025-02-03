@@ -40,5 +40,6 @@
     - `pip install ipykernel`
     - `python -m ipykernel install --user --name=your_env_name`
     - `pip install elasticsearch`
-- Run /jupyterproject/scrape.ipynb to extract sample FAQs
-- Run /jupyterproject/Elasticsearch1.ipynb to index the FAQs
+- Run /jupyterproject/b1_scrape.ipynb to extract sample FAQs
+- Run /jupyterproject/b2_populate.ipynb to index the FAQs
+- etc
