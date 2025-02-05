@@ -1,76 +1,56 @@
-// server.js
+require('dotenv').config()
 const express = require('express');
 const cors = require('cors');
-const mongoose = require('mongoose');
 
 const app = express();
 const PORT = 5000;
 
-// Middleware
+const { Client } = require('@elastic/elasticsearch');
+const client = new Client({
+    node: 'http://localhost:9200',
+    auth: {
+        apiKey: process.env.ELASTIC_API_KEY
+    }
+});
+
 app.use(cors()); // Enable CORS for all origins (you can restrict it later)
 app.use(express.json()); // Parse incoming JSON requests
 
-// MongoDB connection
-mongoose.connect('mongodb://localhost:27017/esresearch', {
-  useNewUrlParser: true,
-  useUnifiedTopology: true,
-})
-  .then(() => console.log('Connected to MongoDB'))
-  .catch((err) => console.error('MongoDB connection error:', err));
-
-// Define a simple model
-const User = mongoose.model('User', new mongoose.Schema({
-    name: String,
-    email: String,
-  }), 'users');
-  
-  
-// Define a simple model
-const Faq = mongoose.model('Faq', new mongoose.Schema({
-    Question: String,
-    Answer: String,
-  }), 'faqs');
-  
-  // Routes
-app.get('/', (req, res) => {
-  res.send('Express API is running');
+app.get('/', async (req, res) => {
+    const resp = await client.info();
+    res.send('Express API is running');
 });
 
-app.get('/users', (req, res) => {
-    User.find()
-        .then((users) => {
-            console.log('Users:', users);
-            return res.json(users);
-        })
-        .catch((err) => res.status(500).send('Error fetching users: ' + err));
-    });
-
-app.get('/faqs', (req, res) => {
+app.get('/faqs', async (req, res) => {
     const search = req.query.search;
     let query = {};
-
+    let results = [];
     if (search) {
-        query = { Question: { $regex: search, $options: 'i' } }; // Case-insensitive search
+        const searchResult = await client.search({
+            index: 'faqs',
+            q: search
+        });
+        
+        results = searchResult.hits.hits.map(hit => {
+            return hit;
+        });
+    }else{
+        const allFaqs = await client.search({
+            index: 'faqs',
+            body: {
+                query: {
+                    match_all: {}
+                }
+            }
+        });
+        results = allFaqs.hits.hits.map(hit => {
+            return hit;
+        });
     }
 
-    Faq.find(query)
-        .then((faqs) => {
-            console.log('Faqs:', faqs);
-            return res.json(faqs);
-        })
-        .catch((err) => res.status(500).send('Error fetching FAQs: ' + err));
+    res.json(results);
 });
 
-app.post('/addUser', (req, res) => {
-  const { name, email } = req.body;
-  const newUser = new User({ name, email });
-
-  newUser.save()
-    .then(() => res.status(201).send('User added successfully'))
-    .catch((err) => res.status(500).send('Error adding user: ' + err));
-});
-
-// Start the server
 app.listen(PORT, () => {
-  console.log(`Server is running on http://localhost:${PORT}`);
+    console.log(`Server is running on http://localhost:${PORT}`);
 });
