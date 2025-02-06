@@ -45,22 +45,9 @@
 - etc
 
 
-### api
-- Open ./api in VS Code
-- Make sure Elasticsearch is running on Docker Desktop
-- Generate an API key from the Elastic Cloud Console (http://localhost:5601)
-- Create a file called '.env' and store your key in it (ELASTIC_API_KEY=xxxxxxxxxxx)
-- In a terminal run:
-    - `npm install`
-    - `npm start`
-- Open http://localhost:5000 in a browser
+### Node.js API
+- relocated to standalone repo: severalpens/esresearchapi
 
-
-### mern (React Client)
-- Make sure ./api is running
-- Open ./mern in VS Code
-- In a terminal run:
-    - `npm install`
-    - `npm run dev`
-- Open http://localhost:3000 in a browser
+### React Client
+- relocated to standalone repo: severalpens/elasticsearchclient
 
